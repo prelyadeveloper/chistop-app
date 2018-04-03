@@ -1,0 +1,8 @@
+{
+  "name": "chisto-app",
+  "app_id": "e157d0c5",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
