@@ -1,0 +1,86 @@
+page-actions {
+
+}
+ion-footer{
+  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.20);
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    background: white;
+    width: 7rem;
+    top: -41%;
+    height: 7rem;
+    border-radius: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.20);
+  }
+}
+
+
+.tab-button{
+  min-height: 49px;
+  position: relative;
+  overflow: visible;
+&:before{
+
+  content: '';
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position-y: 21px;
+  top: -24px;
+  background-position-x: 50%
+}
+
+  &:nth-of-type(3):before{
+    background-image: url(../../assets/icon/order.png);
+    background-size: 45px 25px;
+  }
+  &:nth-of-type(1):before{
+    background-image: url(../../assets/icon/order2.png);
+    background-size: 30px 24px;
+  }
+  &:nth-of-type(2):before{
+    background-image: url(../../assets/icon/discount.png);
+    background-size: 30px 24px;
+  }
+
+
+  &:nth-of-type(4):before{
+    background-image: url(../../assets/icon/price.png);
+    background-size: 30px 24px;
+  }
+  &:nth-of-type(5):before{
+    background-image: url(../../assets/icon/department.png);
+    background-size: 17px 24px;
+  }
+}
+
+.tab-button-text{
+  margin-top: 19px!important;
+}
+.tabbar{
+  opacity: 1;
+  background: none!important;
+  border: none!important;
+
+}
+
+.tab-button-text {
+  font-size: 1.1rem!important;
+}
+
+
+.toolbar-background{
+  background: white!important;
+  border:none!important;
+}
+
+.toolbar{
+  height: 49px;
+}

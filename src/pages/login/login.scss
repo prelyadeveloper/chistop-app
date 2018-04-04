@@ -1,0 +1,74 @@
+page-login {
+
+  form{
+    padding: 0;
+  }
+
+  ion-item{
+    padding-left: 0!important;
+    padding-right: 0!important;
+  }
+
+  form{
+    font-family: avanti;
+  }
+  ion-input{
+    background: #FFFFFF;
+    border: 2px solid #828282;
+    box-sizing: border-box;
+    padding-left: 25px;
+
+    border-radius: 80px;
+    margin-bottom: 23px;
+  }
+
+  button[type=submit]{
+    background: #FFFFFF;
+    border: 2px solid #00B9D6;
+    box-sizing: border-box;
+    border-radius: 80px;
+    color:black;
+  }
+  button[type=submit].activated{
+    background: #00B9D6;
+    color:white;
+  }
+
+  .forgot-password{
+    display: block;
+    margin-top: 1.9em;
+    font-size: 1.2em;
+    margin-bottom: 1.3em;
+  }
+
+  .button{
+    height: 2.3em !important;
+    font-size: 1.7rem;
+  }
+
+  .dont-have-account{
+    margin-top: 1em;
+    padding: 0 1em;
+    display: flex;
+    font-family: avanti;
+    justify-content: space-between;
+    margin-top: .8em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+
+    span:nth-of-type(1){
+      font-family: avanti;
+    }
+    span:nth-of-type(2){
+      font-family: avantiBold;
+      color: #D05743;
+    }
+  }
+
+}
+
+.title .toolbar-title{
+  color: #1C3C86!important;
+  font-size: 2.1rem;
+  font-family: avanti;
+}

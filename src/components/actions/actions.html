@@ -1,0 +1,17 @@
+<!-- Generated template for the ActionsComponent component -->
+<div *ngFor="let action of actionsList">
+
+  <div class="action-img">
+    <img [src]="action.img">
+  </div>
+  <p class="action-title">{{action.title}}</p>
+  <p class="action-descr">{{action.description}}</p>
+  <section>
+    <ion-grid>
+      <ion-row text-center>
+        <ion-col><span><img src="icons/order.png"></span> <span class="action-date">{{action.date}}</span></ion-col>
+        <ion-col> <button class="action-button"ion-button round>Детальнише</button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+</div>

@@ -23,6 +23,20 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 
+@font-face {
+  font-family: avanti;
+  src: url('../assets/Font/Avanti.ttf');
+}
+
+@font-face {
+  font-family: avantiBold;
+  src: url('../assets/Font/Avanti_Bold.ttf');
+}
+@font-face {
+  font-family: avantiItalic;
+  src: url('../assets/Font/Avanti_Italic.ttf');
+}
+
 
 
 // Named Color Variables

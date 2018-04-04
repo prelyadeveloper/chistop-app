@@ -1,0 +1,37 @@
+page-registration {
+
+  form{
+    padding: 0;
+  }
+
+  ion-item{
+    padding-left: 0!important;
+    padding-right: 0!important;
+  }
+
+  form{
+    font-family: avanti;
+  }
+  ion-input{
+    background: #FFFFFF;
+    border: 2px solid #828282;
+    box-sizing: border-box;
+    padding-left: 25px;
+
+    border-radius: 80px;
+    margin-bottom: 23px;
+  }
+
+  button[type=submit]{
+    background: #FFFFFF;
+    border: 2px solid #00B9D6;
+    box-sizing: border-box;
+    border-radius: 80px;
+    color:black;
+  }
+  button[type=submit].activated{
+    background: #00B9D6;
+    color:white;
+  }
+
+}

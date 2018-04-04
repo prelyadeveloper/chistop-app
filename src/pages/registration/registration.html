@@ -1,0 +1,49 @@
+<!--
+  Generated template for the RegistrationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Реєстрація</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="registr" >
+    <p>
+      <ion-input [ngStyle]="errorStyle('firstName')" type="text" placeholder="ім'я" formControlName="firstName"></ion-input>
+    </p>
+    <p>
+      <ion-input [ngStyle]="errorStyle('lastName')" type="text" placeholder="Прізвище" formControlName="lastName"></ion-input>
+    </p>
+    <p>
+      <ion-input [ngStyle]="errorStyle('email')" type="email" placeholder="Емейл" formControlName="email"> </ion-input>
+    </p>
+    <p>
+      <ion-input [ngStyle]="errorStyle('mobile')" type="text" placeholder="Мобільний телефон" formControlName="mobile"> </ion-input>
+    </p>
+    <div formGroupName="passwords">
+      <p>
+        <ion-input [ngStyle]="errorStyleGroupCntr('passwords','password')" type="password" placeholder="Пароль" formControlName="password"></ion-input>
+      </p>
+      <p>
+        <ion-input  [ngStyle]="errorStyleGroupCntr('passwords','confirmPass')" type="password" placeholder="Підтвердити пароль" formControlName="confirmPass"></ion-input>
+      </p>
+      <p>
+      <section *ngIf="ifTouchedAndHasErrors('passwords')">
+        <span>Пароль не співпадае</span>
+      </section>
+    </div>
+    <p>
+      <button ion-button type="submit" block (click)="submit()">Реєстрація</button>
+    </p>
+  </form>
+  {{this.registr.controls['passwords'].e}}
+  <social-auth></social-auth>
+
+</ion-content>
