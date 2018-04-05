@@ -10,7 +10,7 @@
     <ion-title>Акції</ion-title>
 
       <button ion-button clear float-right   (click)="presentPopover($event)">
-        <ion-icon name="menu"></ion-icon>
+        <ion-icon name="icon-line-menu"></ion-icon>
       </button>
 
 
@@ -26,12 +26,12 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-tabs selectedIndex="0">
-      <ion-tab  tabTitle="Замовлення"></ion-tab>
-      <ion-tab  tabTitle="Акції"></ion-tab>
-      <ion-tab  tabTitle="Замовити"></ion-tab>
-      <ion-tab  tabTitle="Ціни"></ion-tab>
-      <ion-tab  tabTitle="Відділення"></ion-tab>
+    <ion-tabs selectedIndex="0" [tabsLayout]="icon-show">
+      <ion-tab  tabTitle="Замовлення" class="icon-placeholder-filled-point"></ion-tab>
+      <ion-tab  tabTitle="Акції"  tabIcon="icon-sales"></ion-tab>
+      <ion-tab  tabTitle="Замовити" tabIcon="icon-logistics-delivery-truck-in-movement"></ion-tab>
+      <ion-tab  tabTitle="Ціни" tabIcon="icon-tag"></ion-tab>
+      <ion-tab  tabTitle="Відділення" tabIcon="icon-placeholder-filled-point"></ion-tab>
     </ion-tabs>
   </ion-toolbar>
 </ion-footer>

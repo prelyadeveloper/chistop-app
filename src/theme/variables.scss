@@ -94,9 +94,94 @@ $colors: (
 
 @import "ionic.ionicons";
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../assets/Font/icon-fonts/icomoon.eot?xnewr2');
+  src:  url('../assets/Font/icon-fonts/icomoon.eot?xnewr2#iefix') format('embedded-opentype'),
+  url('../assets/Font/icon-fonts/icomoon.ttf?xnewr2') format('truetype'),
+  url('../assets/Font/icon-fonts/icomoon.woff?xnewr2') format('woff'),
+  url('../assets/Font/icon-fonts/icomoon.svg?xnewr2#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
+[class^="icon-"],
+[class*=" icon-"],
+[class^="ion-ios-icon"],
+[class*="ion-ios-icon"],
+[class^="ion-md-icon"],
+[class*="ion-md-icon"]{
+  //@extend .ion;
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+@mixin makeIcon($arg, $val) {
+  .ion-ios-#{$arg}:before ,
+  .ion-ios-#{$arg}-circle:before ,
+  .ion-ios-#{$arg}-circle-outline:before ,
+  .ion-ios-#{$arg}-outline:before ,
+  .ion-md-#{$arg}:before ,
+  .ion-md-#{$arg}-circle:before ,
+  .ion-md-#{$arg}-circle-outline:before ,
+  .ion-md-#{$arg}-outline:before  {
+    content: $val;
+    font-size: 26px;
+  }
+}
+
+@include makeIcon(icon-sales, '\e91d');
+@include makeIcon(icon-line-menu, '\e918');
+@include makeIcon(icon-logistics-delivery-truck-in-movement, '\e90a');
+@include makeIcon(icon-tag, '\e909');
+@include makeIcon(icon-placeholder-filled-point, '\e904');
+@include makeIcon(icon-new-home, '\e911');
 // Fonts
 // --------------------------------------------------
 
+
+
 @import "roboto";
 @import "noto-sans";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
