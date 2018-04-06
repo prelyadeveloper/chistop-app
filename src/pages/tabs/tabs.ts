@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage} from 'ionic-angular';
-
+import {OrderPage} from "../order/order";
 import {ActionsPage} from "../actions/actions";
 import {HomePage} from "../home/home";
 
@@ -21,6 +21,8 @@ export class TabsPage {
   ActionsPage = ActionsPage;
 
   HomePage = HomePage;
+
+    OrderPage = OrderPage;
   constructor() {
   }
 

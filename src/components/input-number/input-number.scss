@@ -1,0 +1,42 @@
+input-number {
+
+  .input-number-block{
+     position: relative;
+    width: 107px;
+    .minus{
+      background: #00B9D6;
+      border-radius: 60px 0px 0px 60px;
+      height: 32px;
+      width: 34px;
+      position: absolute;
+      left: 0;
+      top:0;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .plus{
+      background: #00B9D6;
+      border-radius: 60px 0px 0px 60px;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      height: 32px;
+      width: 34px;
+      position: absolute;
+     right: 0;
+      display: inline-block;
+      top:0;
+
+      cursor: pointer;
+    }
+
+    .amount-input{
+      text-align: center;
+      padding: 0 35px 0 46px;
+      width: 100%;
+      height: 32px;
+      border-color: transparent;
+      background: transparent;
+    }
+  }
+
+}

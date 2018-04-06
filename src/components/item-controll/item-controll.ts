@@ -39,6 +39,10 @@ export class ItemControllComponent {
         this.item.controls['amount'].setValue(1);
     }
 
+    ChangeValue(amount) {
+        this.item.controls['amount'].setValue(amount);
+    }
+
     ifZero() {
         return this.item.controls['amount'].value === 0 &&  this.item.controls['price'].value === null;
     }

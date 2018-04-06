@@ -1,3 +1,20 @@
-form-group {
+//form-group {
 
+  .overall-amount{
+    font-family: avanti;
+    font-size: 19px;
+    .actual-price{
+      color: #1C3C86;
+      font-family: avantiBold;
+    }
+
+  }
+.order-textarea{
+  background: #FFFFFF;
+  border: 2px solid #BDBDBD;
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 100%;
+  font-family: avanti;
 }
+//}

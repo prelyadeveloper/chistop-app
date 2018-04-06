@@ -22,6 +22,8 @@ import {SelectSubcategoriesComponent} from "../components/select-subcategories/s
 import {FormGroupComponent} from "../components/form-group/form-group";
 import {ItemArrayComponent} from "../components/item-array/item-array";
 import {ItemControllComponent} from "../components/item-controll/item-controll";
+import {OrderPage} from "../pages/order/order";
+import {InputNumberComponent} from "../components/input-number/input-number";
 
 @NgModule({
   declarations: [
@@ -42,8 +44,9 @@ import {ItemControllComponent} from "../components/item-controll/item-controll";
       SelectSubcategoriesComponent,
       FormGroupComponent,
       ItemArrayComponent,
-      ItemControllComponent
-
+      ItemControllComponent,
+      OrderPage,
+      InputNumberComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,9 @@ import {ItemControllComponent} from "../components/item-controll/item-controll";
       SelectSubcategoriesComponent,
       FormGroupComponent,
       ItemArrayComponent,
-      ItemControllComponent
+      ItemControllComponent,
+      OrderPage,
+      InputNumberComponent
 
   ],
   providers: [

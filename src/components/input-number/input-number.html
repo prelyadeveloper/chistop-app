@@ -1,0 +1,4 @@
+ <div class="input-number-block"><span (click)="plus(input_number)" class="plus"></span>
+     <input type="number" #input_number class="amount-input"  [value]="initValue" min="0" disabled>
+     <span class="minus" (click)="minus(input_number)"></span>
+ </div>

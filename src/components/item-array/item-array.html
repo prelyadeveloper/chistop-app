@@ -1,10 +1,11 @@
-`
-<fieldset>
+
   <div *ngIf="itemsFormArray.hasError('minSum')">
   </div>
   <item-controll [services]="services"
           *ngFor="let item of itemsFormArray.controls; let i=index"
           [index]="i" [item]="item" (removed)="itemsFormArray.removeAt($event)">
   </item-controll>
-</fieldset>
-<button type="button" class="btn btn-link" (click)="addItem()">Add another item</button>
+
+  <p class="add-service">
+    <span>Додати послугу</span><button type="button" class="btn btn-link" (click)="addItem()">+</button>
+  </p>

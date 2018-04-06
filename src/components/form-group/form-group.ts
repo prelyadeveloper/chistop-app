@@ -25,14 +25,15 @@ export class FormGroupComponent {
     constructor(private fb: FormBuilder) {}
 
     ngOnInit() {
-        //
+
         var services = [{id:1,name:'Головний убір, шарф, рукавиці, хустина',price:'22',amount:2},
             {id:2,name:'Головний убір, шарф, рукавиці, хустина',price:'42',amount:1}];
 
-        // var services = [{id:null,name:null,price:0,amount:0}]
+         // var services = [{id:null,name:null,price:0,amount:0}]
         // build the form model
         this.myForm = this.fb.group({
-            services: ItemArrayComponent.buildItems(services)
+            services: ItemArrayComponent.buildItems(services),
+            address:[]
         })
 
         this.myForm.get('services').valueChanges.subscribe(value => {

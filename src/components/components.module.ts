@@ -10,6 +10,7 @@ import { SelectSubcategoriesComponent } from './select-subcategories/select-subc
 import { ItemControllComponent } from './item-controll/item-controll';
 import { ItemArrayComponent } from './item-array/item-array';
 import { FormGroupComponent } from './form-group/form-group';
+import { InputNumberComponent } from './input-number/input-number';
 @NgModule({
 	declarations: [ActionsComponent,
     ActionDetailComponent,
@@ -21,7 +22,8 @@ import { FormGroupComponent } from './form-group/form-group';
     SelectSubcategoriesComponent,
     ItemControllComponent,
     ItemArrayComponent,
-    FormGroupComponent],
+    FormGroupComponent,
+    InputNumberComponent],
 	imports: [],
 	exports: [ActionsComponent,
     ActionDetailComponent,
@@ -33,6 +35,7 @@ import { FormGroupComponent } from './form-group/form-group';
     SelectSubcategoriesComponent,
     ItemControllComponent,
     ItemArrayComponent,
-    FormGroupComponent]
+    FormGroupComponent,
+    InputNumberComponent]
 })
 export class ComponentsModule {}

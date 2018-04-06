@@ -1,6 +1,15 @@
 <p [formGroup]="item">
-  <input type="number" formControlName="amount" min="0" [attr.disabled]="ifZero() ? '': null" >
-  <custom-select  [service]="{'name':getControllValue('name'),'price':getControllValue('price')}" (SelectCat)="SelectCat($event)" [services]="services"></custom-select>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-4>
+<input-number (ChangeValue)="ChangeValue($event)" [disable]="ifZero()" [controlName]="'amount'" [initValue]="getControllValue('amount')"></input-number>
+      </ion-col>
+      <ion-col col-8>
+        <custom-select  [service]="{'name':getControllValue('name'),'price':getControllValue('price')}" (SelectCat)="SelectCat($event)" [services]="services"></custom-select>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--<button type="button" class="btn" (click)="removed.emit(index)">-</button>-->
 </p>
 
 

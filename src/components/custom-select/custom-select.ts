@@ -25,13 +25,17 @@ export class CustomSelectComponent {
     _service;
     @Input() set service(value){
 
-        if(this.input_inner !== null){
+        if(value.name === null){
+
+            console.log(value);
+            this.input_inner = '<span>Пошук</span>'
+        } else {
             this.setInnerHtml(value);
         }
 
     }
 
-    input_inner = null;
+    input_inner;
     _services;
     @Output() SelectCat = new EventEmitter();
     @Input()  set services(value){
@@ -44,8 +48,11 @@ export class CustomSelectComponent {
     }
 
     constructor(private _elementRef: ElementRef) {
-        if(this.input_inner === null)
-        this.input_inner = '<span>Пошук</span>'
+
+        // if(!this.input_inner === undefined) {
+        //     alert(3);
+        // }
+        // this.input_inner = '<span>Пошук</span>'
     }
 
 
@@ -79,7 +86,7 @@ export class CustomSelectComponent {
     }
 
     setInnerHtml(item){
-        this.input_inner = '<span class="service-name">'+item.name+'</span><span class="service-price">'+item.price+'</span>';
+        this.input_inner = '<span class="service-name">'+item.name.substr(0,14)+'...</span><span class="service-price">шт. '+item.price+'</span>';
     }
 
     openSelect() {
