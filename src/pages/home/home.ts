@@ -19,8 +19,8 @@ public services;
         id:1,
         name :'Чистка текстилю',
         list:[{id:1,name:'Головний убір, шарф, рукавиці, хустина',price:'22'},
-            {id:2,name:' Жилет, безрукавка',price:'22'},
-            {id:1,name:' Пальто, півпальто, плащ, пончо',price:'22'}],
+            {id:2,name:' Жилет, безрукавка',price:'43'},
+            {id:1,name:' Пальто, півпальто, плащ, пончо',price:'65'}],
         icon:'icon-water'
     },
         {
@@ -49,14 +49,7 @@ public services;
             icon:'icon-iron'
         }
     ]
-    //
-    // this.fg = this.fb.group({
-    //     chosenServices: new FormArray({
-    //         new FormGroup({
-    //
-    //         })
-    //     })
-    // })
+
   }
 
 

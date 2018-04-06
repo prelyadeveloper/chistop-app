@@ -1,17 +1,6 @@
-<div class="form-group row" [formGroup]="item">
-  <div class="col-lg-12">
-    <label [attr.for]="'name'+index">Filter Type Name</label>
-    <input type="text" class="form-control" [attr.id]="'name'+index" formControlName="id">
-  </div>
-  <div class="col-lg-12">
-    <label [attr.for]="'name'+index">Filter key</label>
-    <input type="text" class="form-control" [attr.id]="'name'+index" formControlName="name">
-  </div>
-  <div class="col-lg-12">
-    <label [attr.for]="'quantity'+index">Description</label>
-    <textarea  class="form-control" [attr.id]="'quantity'+index"  formControlName="price"></textarea>
-  </div>
-  <div class="col-sm-1 py-1">
-    <button type="button" class="btn" (click)="removed.emit(index)">-</button>
-  </div>
-</div>
+<p [formGroup]="item">
+  <input type="number" formControlName="amount" min="0" [attr.disabled]="ifZero() ? '': null" >
+  <custom-select  [service]="{'name':getControllValue('name'),'price':getControllValue('price')}" (SelectCat)="SelectCat($event)" [services]="services"></custom-select>
+</p>
+
+

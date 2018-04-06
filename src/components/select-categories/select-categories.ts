@@ -18,10 +18,7 @@ export class SelectCategoriesComponent {
   @Output() CatSelect = new EventEmitter();
   text: string;
 
-  constructor() {
-    console.log('Hello SelectCategoriesComponent Component');
-    this.text = 'Hello World';
-  }
+  constructor() {}
 
     selectCat(id: number){
     this.CatSelect.emit(id);

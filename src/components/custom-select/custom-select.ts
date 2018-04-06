@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import {HostListener} from "@angular/core";
 import {ElementRef} from "@angular/core";
 import {ChangeDetectionStrategy} from "@angular/core";
-import {Input} from "@angular/core";
+import {Input, Output} from "@angular/core";
+import {EventEmitter} from "@angular/core";
+
 
 /**
  * Generated class for the CustomSelectComponent component.
@@ -20,13 +22,32 @@ export class CustomSelectComponent {
     state = 'closed';
 
     selectedCat = null;
+    _service;
+    @Input() set service(value){
 
-    @Input() services;
-
-    constructor(private _elementRef: ElementRef) {
-
+        if(this.input_inner !== null){
+            this.setInnerHtml(value);
+        }
 
     }
+
+    input_inner = null;
+    _services;
+    @Output() SelectCat = new EventEmitter();
+    @Input()  set services(value){
+        this._services = value;
+    };
+
+    get services(){
+
+        return this._services;
+    }
+
+    constructor(private _elementRef: ElementRef) {
+        if(this.input_inner === null)
+        this.input_inner = '<span>Пошук</span>'
+    }
+
 
     back(){
         this.selectedCat = null;
@@ -37,6 +58,7 @@ export class CustomSelectComponent {
             return value.id === id;
         })
     }
+
     @HostListener('document:click', ['$event.target'])
     public onClick(targetElement) {
         const clickedInside = this._elementRef.nativeElement.contains(targetElement);
@@ -46,12 +68,18 @@ export class CustomSelectComponent {
     }
 
 
-    ItemChose(item){
-
-        console.log(item);
+    ItemChose(item) {
+        this.SelectCat.emit(item);
+        this.setInnerHtml(item);
+        this.openSelect();
+         this.back();
     }
     CatSelect(id){
         this.selectedCat = id;
+    }
+
+    setInnerHtml(item){
+        this.input_inner = '<span class="service-name">'+item.name+'</span><span class="service-price">'+item.price+'</span>';
     }
 
     openSelect() {

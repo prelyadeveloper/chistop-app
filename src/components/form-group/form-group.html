@@ -1,8 +1,6 @@
 
     <form [formGroup]="myForm" (ngSubmit)="submit()">
-      <h4>Form</h4>
-      <hr>
-      <item-array
+      <item-array [services]="services"
               formArrayName="services"
               [itemsFormArray]="myForm.get('services')">
       </item-array>
@@ -11,6 +9,6 @@
         <input type="submit" class="form-control" value="Submit" [disabled]="myForm?.invalid">
       </div>
     </form>
-
+<p>{{overallSum}}</p>
     <h6 class="mt-3">FormGroup Model (<code>myForm.value</code>)</h6>
     <div><pre><code>{{ myForm?.value | json }}</code></pre></div>

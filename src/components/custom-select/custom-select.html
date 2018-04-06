@@ -2,17 +2,11 @@
 <section [ngClass]="ifOpen()? 'select-overlay':''">
 </section>
   <div    class="multilevel-select">
-    <input outside-click type="text" placeholder="Пошук" (click)="openSelect()" >
+      <p class="p-like-input" outside-click [ngClass]="{'z-index-1':!!ifOpen()}" #p_like_onput (click)="openSelect()" [innerHtml]="input_inner"></p>
     <section class="select-choice" [hidden]="!ifOpen()" >
-
-
-
-
-
         <select-categories *ngIf="!selectedCat" (CatSelect)="CatSelect($event)" [categories]="services"></select-categories>
 
        <select-subcategories (ItemChose)="ItemChose($event)" (goBack)="back()" *ngIf="selectedCat" [service]="selectedCat?  getServiceByid(selectedCat): null"></select-subcategories>
-
 
     </section>
   </div>

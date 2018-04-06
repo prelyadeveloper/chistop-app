@@ -18,22 +18,37 @@ export class ItemControllComponent {
     @Input()
     public index: number;
 
+    @Input() services;
+
     @Input()
     public item: FormGroup;
 
     @Output()
     public removed: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() {
+  constructor() {}
 
-  }
+      getControllValue(name){
+              return  this.item.controls[name].value;
+      }
 
+    SelectCat(item){
+        this.item.controls['id'].setValue(item.id);
+        this.item.controls['name'].setValue(item.name);
+        this.item.controls['price'].setValue(item.price);
+        this.item.controls['amount'].setValue(1);
+    }
 
-    static buildItem(id: number = null, name: string = null, price:number = null) {
+    ifZero() {
+        return this.item.controls['amount'].value === 0 &&  this.item.controls['price'].value === null;
+    }
+
+    static buildItem(id: number = null, name: string = null, price:number = null, amount: number) {
         return new FormGroup({
             id: new FormControl(id),
             name: new FormControl(name),
-            price: new FormControl(price)
+            price: new FormControl(price),
+            amount:new FormControl(amount)
         })
     }
 
