@@ -12,6 +12,16 @@ import{LoginPage} from "../pages/login/login";
 import {LogoComponent} from "../components/logo/logo";
 import {SocialAuthComponent} from "../components/social-auth/social-auth";
 import {RegistrationPage} from "../pages/registration/registration";
+import {TabsPage} from "../pages/tabs/tabs";
+import {BurgerMenuComponent} from "../components/burger-menu/burger-menu";
+import {ActionDetailPage} from "../pages/action-detail/action-detail";
+import {OutsideClickDirective} from "../directives/outside-click/outside-click";
+import {CustomSelectComponent} from "../components/custom-select/custom-select";
+import {SelectCategoriesComponent} from "../components/select-categories/select-categories";
+import {SelectSubcategoriesComponent} from "../components/select-subcategories/select-subcategories";
+import {FormGroupComponent} from "../components/form-group/form-group";
+import {ItemArrayComponent} from "../components/item-array/item-array";
+import {ItemControllComponent} from "../components/item-controll/item-controll";
 
 @NgModule({
   declarations: [
@@ -23,7 +33,17 @@ import {RegistrationPage} from "../pages/registration/registration";
       LoginPage,
       LogoComponent,
       SocialAuthComponent,
-      RegistrationPage
+      RegistrationPage,
+      TabsPage,
+      BurgerMenuComponent,
+      ActionDetailPage,
+      CustomSelectComponent,
+      SelectCategoriesComponent,
+      SelectSubcategoriesComponent,
+      FormGroupComponent,
+      ItemArrayComponent,
+      ItemControllComponent
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +58,16 @@ import {RegistrationPage} from "../pages/registration/registration";
       LoginPage,
       LogoComponent,
       SocialAuthComponent,
-      RegistrationPage
+      RegistrationPage,
+      TabsPage,
+      BurgerMenuComponent,
+      ActionDetailPage,
+      CustomSelectComponent,
+      SelectCategoriesComponent,
+      SelectSubcategoriesComponent,
+      FormGroupComponent,
+      ItemArrayComponent,
+      ItemControllComponent
 
   ],
   providers: [

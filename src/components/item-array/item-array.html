@@ -1,0 +1,12 @@
+`
+<fieldset>
+  <h6>Items</h6>
+  <div *ngIf="itemsFormArray.hasError('minSum')">
+    <!--You must buy a total sum of at least {{ itemsFormArray.getError('minSum') }}.-->
+  </div>
+  <item-controll
+          *ngFor="let item of itemsFormArray.controls; let i=index"
+          [index]="i" [item]="item" (removed)="itemsFormArray.removeAt($event)">
+  </item-controll>
+</fieldset>
+<button type="button" class="btn btn-link" (click)="addItem()">Add another item</button>

@@ -1,0 +1,14 @@
+<!-- Generated template for the SelectSubcategoriesComponent component -->
+<div >
+ <p><ion-icon color="primary" (click)="back()" [name]="service?.icon"></ion-icon>{{service?.name}}</p>
+  <section>
+    <ion-row *ngFor="let item of service?.list" (click)="choseItem(item)">
+      <ion-col col-12>
+        <ion-col col-8> {{item?.name}}</ion-col>
+        <ion-col col-2>шт</ion-col>
+        <ion-col col-2>89</ion-col>
+      </ion-col>
+    </ion-row>
+
+  </section>
+</div>

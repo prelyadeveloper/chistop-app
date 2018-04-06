@@ -48,7 +48,7 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  primary:   #00B9D6,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -141,6 +141,11 @@ $colors: (
   }
 }
 
+@include makeIcon(icon-eco, '\e912');
+@include makeIcon(icon-iron, '\e911');
+@include makeIcon(icon-shirt, '\e915');
+@include makeIcon(icon-water, '\e913');
+@include makeIcon(icon-paint, '\e914');
 @include makeIcon(icon-sales, '\e91d');
 @include makeIcon(icon-line-menu, '\e918');
 @include makeIcon(icon-logistics-delivery-truck-in-movement, '\e90a');

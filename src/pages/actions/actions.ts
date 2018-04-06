@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
-import { PopoverController } from 'ionic-angular';
-import {PopoverPage} from "../popover/popover";
+import {NavController, NavParams} from "ionic-angular";
 import {HomePage} from "../home/home";
+import {ActionDetailPage} from "../action-detail/action-detail";
 
 /**
  * Generated class for the ActionsPage page.
@@ -19,16 +19,13 @@ import {HomePage} from "../home/home";
 export class ActionsPage {
 
     HomePage = HomePage;
-  constructor( public popoverCtrl: PopoverController) {
+  constructor( ) {
+
   }
 
-    presentPopover(myEvent) {
-      // alert(3);
-        let popover = this.popoverCtrl.create(PopoverPage);
-        popover.present({
-            ev: myEvent
-        });
-    }
+
+
+
 
   // ionViewDidLoad() {
   //   console.log('ionViewDidLoad ActionsPage');
