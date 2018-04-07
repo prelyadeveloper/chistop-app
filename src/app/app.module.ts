@@ -24,7 +24,7 @@ import {ItemArrayComponent} from "../components/item-array/item-array";
 import {ItemControllComponent} from "../components/item-controll/item-controll";
 import {OrderPage} from "../pages/order/order";
 import {InputNumberComponent} from "../components/input-number/input-number";
-
+import {PricesPage} from "../pages/prices/prices";
 
 @NgModule({
   declarations: [
@@ -49,6 +49,7 @@ import {InputNumberComponent} from "../components/input-number/input-number";
       ItemControllComponent,
       OrderPage,
       InputNumberComponent,
+      PricesPage
 
   ],
   imports: [
@@ -59,6 +60,7 @@ import {InputNumberComponent} from "../components/input-number/input-number";
   entryComponents: [
     MyApp,
     HomePage,
+      PricesPage,
       ActionsPage,
       PopoverPage,
       LoginPage,

@@ -3,6 +3,7 @@ import { IonicPage} from 'ionic-angular';
 import {OrderPage} from "../order/order";
 import {ActionsPage} from "../actions/actions";
 import {HomePage} from "../home/home";
+import{ PricesPage} from "../prices/prices";
 
 /**
  * Generated class for the TabsPage page.
@@ -19,7 +20,7 @@ import {HomePage} from "../home/home";
 export class TabsPage {
 
   ActionsPage = ActionsPage;
-
+  PricesPage = PricesPage;
   HomePage = HomePage;
 
     OrderPage = OrderPage;

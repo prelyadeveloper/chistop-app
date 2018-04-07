@@ -1,5 +1,4 @@
 input-number {
-
   .input-number-block{
      position: relative;
     width: 107px;
@@ -20,7 +19,6 @@ input-number {
         color: white;
         margin-top: 13px;
       }
-
     }
 
     .plus{
@@ -33,7 +31,6 @@ input-number {
       right: 0;
       display: inline-block;
       top:0;
-
       text-align: center;
       ion-icon:before{
         font-size: 15px;
@@ -41,7 +38,6 @@ input-number {
         color: white;
         margin-top: 8px;
       }
-
       cursor: pointer;
     }
 
@@ -63,8 +59,5 @@ input-number {
         margin: 0;
       }
     }
-
-
   }
-
 }

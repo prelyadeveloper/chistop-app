@@ -1,7 +1,7 @@
 <section (click)="openSelect()" [ngClass]="ifOpen()? 'select-overlay':''">
 </section>
   <div class="multilevel-select">
-      <p no-padding no-margin class="p-like-input" outside-click [ngClass]="{'z-index-34':ifOpen()}" #p_like_onput (click)="openSelect()" [innerHtml]="input_inner"></p>
+      <p no-padding no-margin class="p-like-input"  [class]="'my-col-sm'" outside-click [ngClass]="{'z-index-34':ifOpen()}" #p_like_onput (click)="openSelect()" [innerHtml]="input_inner"></p>
     <section class="select-choice" [hidden]="!ifOpen()" [ngClass]="{'z-index-34':ifOpen()}">
         <select-categories *ngIf="!selectedCat" (CatSelect)="CatSelect($event)" [categories]="services"></select-categories>
        <select-subcategories (ItemChose)="ItemChose($event)" (goBack)="back()" *ngIf="selectedCat" [service]="selectedCat?  getServiceByid(selectedCat): null"></select-subcategories>

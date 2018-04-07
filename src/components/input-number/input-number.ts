@@ -24,8 +24,8 @@ export class InputNumberComponent {
     plus(element: HTMLInputElement){
         (element.value as any)++;
         this.valueChange(element.value);
-
     }
+
     minus(element: HTMLInputElement){
         if(parseInt(element.value) > 0){
             (element.value as any)--;

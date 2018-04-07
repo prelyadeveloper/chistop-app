@@ -19,17 +19,15 @@ import {EventEmitter} from "@angular/core";
 export class CustomSelectComponent {
 
     state = 'closed';
-
     selectedCat = null;
     _service;
-    @Input() set service(value){
 
+    @Input() set service(value){
         if(value.name === null){
             this.input_inner = '<span>Пошук</span>'
         } else {
             this.setInnerHtml(value);
         }
-
     }
 
     input_inner;
@@ -40,14 +38,10 @@ export class CustomSelectComponent {
     };
 
     get services(){
-
         return this._services;
     }
 
-    constructor() {
-
-    }
-
+    constructor() {}
 
     back(){
         this.selectedCat = null;
@@ -61,7 +55,6 @@ export class CustomSelectComponent {
 
     @HostListener('document:click', ['$event.target'])
     public onClick(targetElement) {
-
         if ( targetElement.className === 'select-overlay' && this.ifOpen()) {
           this.openSelect();
         }
@@ -74,6 +67,7 @@ export class CustomSelectComponent {
         this.openSelect();
          this.back();
     }
+
     CatSelect(id){
         this.selectedCat = id;
     }
@@ -93,5 +87,4 @@ export class CustomSelectComponent {
             return false;
         }
     }
-
 }

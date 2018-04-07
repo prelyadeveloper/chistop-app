@@ -37,7 +37,6 @@ export class FormGroupComponent {
         })
 
         this.myForm.get('services').valueChanges.subscribe(value => {
-
             this.overallSum= 0;
             (this.myForm.get('services') as FormArray).controls.forEach(value => {
                this.overallSum += parseInt((value as FormGroup).controls['price'].value) * parseInt((value as FormGroup).controls['amount'].value);

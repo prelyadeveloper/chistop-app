@@ -5,8 +5,11 @@
     </ion-col>
   </ion-row>
   <ion-row >
-    <ion-col (click)="selectCat(item.id)" *ngFor="let item of categories" col-6>
+    <ion-col (click)="selectCat(item.id)" *ngFor="let item of categories" col-sm-4 col-md-4 col-6 col-lg-3>
       <ion-col col-4>  <ion-icon [name]="item.icon" color="primary"></ion-icon></ion-col> <ion-col  col-8>{{item.name}}</ion-col>
     </ion-col>
+    <ion-col col-12 col-md-4 col-sm-4>  <ion-col col-4>  <ion-icon [name]="" color="primary"></ion-icon></ion-col> <ion-col  col-8></ion-col></ion-col>
+    <ion-col col-12 col-md-4 col-sm-4>  <ion-col col-4>  <ion-icon [name]="" color="primary"></ion-icon></ion-col> <ion-col  col-8></ion-col></ion-col>
+    <ion-col col-12 col-md-4 col-sm-4>  <ion-col col-4>  <ion-icon [name]="" color="primary"></ion-icon></ion-col> <ion-col  col-8></ion-col></ion-col>
   </ion-row>
 </ion-grid>

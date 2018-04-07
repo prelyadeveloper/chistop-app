@@ -13,15 +13,9 @@ import {PopoverController} from "ionic-angular";
   templateUrl: 'burger-menu.html'
 })
 export class BurgerMenuComponent {
-
-
-
-  constructor(public popoverCtrl: PopoverController) {
-
-  }
+  constructor(public popoverCtrl: PopoverController) {}
 
     presentPopover(myEvent) {
-        // alert(3);
         let popover = this.popoverCtrl.create(PopoverPage);
         popover.present({
             ev: myEvent

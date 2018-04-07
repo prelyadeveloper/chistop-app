@@ -2,3 +2,20 @@ item-controll {
 
 
 }
+.p-style{
+  max-width: 380px;margin: 0 auto;margin-bottom: 10px
+}
+
+@media (max-width:390px) {
+  .some-class{
+    justify-content: center;
+    margin-bottom: 12px;
+    order: 2;
+    margin-top: 13px;
+  }
+
+  .my-col-sm{
+    min-width: 100%;
+    width: 100%;
+  }
+}

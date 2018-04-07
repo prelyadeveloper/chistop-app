@@ -1,0 +1,52 @@
+<!--
+  Generated template for the PricesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>prices</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <input #inputValue (keyup)="search(inputValue)" type="text">
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="view === 'cat'">
+    <ion-row *ngFor="let item of sortedServices">
+      <ion-col (click)="showSubCat(item.id, inputValue)" col-6>
+        <ion-col>
+          <ion-icon [name]="item.icon"></ion-icon>
+        </ion-col>
+        <ion-col>
+          {{item.name}}
+        </ion-col>
+      </ion-col>
+    </ion-row>
+    </ion-row>
+
+
+    <ion-row *ngIf="view === 'subcat'">
+      <ion-col  col-12><span (click)="showCat(inputValue)">go back</span></ion-col>
+      <ion-row *ngFor="let item of sortedServiceList">
+        <ion-col  col-12>
+          <ion-col>
+            {{item.name}}
+          </ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+
+
+  </ion-grid>
+
+</ion-content>
