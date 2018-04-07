@@ -1,7 +1,14 @@
 page-tabs {
-
+  .tab-button[aria-selected=true] .tab-button-icon{
+    color:#1C3C86!important;
+  }
+  .tab-button[aria-selected=true]{
+    color:#1C3C86!important;
+  }
 
   .tabbar {
+
+
     box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.20);
     &:after{
       content: '';
@@ -16,7 +23,7 @@ page-tabs {
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
       box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.20);
-      z-index: -1;
+      z-index: -4;
     }
   }
 
@@ -25,6 +32,7 @@ page-tabs {
     min-height: 49px;
     position: relative;
     overflow: visible;
+    background: white;
 
   }
 
@@ -65,7 +73,7 @@ page-tabs {
 
 
   .toolbar-background{
-    background: white!important;
+    background: red!important;
     border:none!important;
   }
 

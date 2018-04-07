@@ -18,23 +18,18 @@ export class InputNumberComponent {
   @Input() disable;
   @Input() initValue = 0;
   @Output() ChangeValue = new EventEmitter();
-  text: string;
 
-
-    constructor() {
-        console.log('Hello InputNumberComponent Component');
-        this.text = 'Hello World';
-    }
+    constructor() {}
 
     plus(element: HTMLInputElement){
-        element.value++;
+        (element.value as any)++;
         this.valueChange(element.value);
 
     }
     minus(element: HTMLInputElement){
-        if(element.value > 0){
-            element.value--;
-            this.valueChange(element.value);
+        if(parseInt(element.value) > 0){
+            (element.value as any)--;
+            this.valueChange(parseInt(element.value));
         }
     }
 

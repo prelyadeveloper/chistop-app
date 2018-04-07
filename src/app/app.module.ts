@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import {ActionsPage} from "../pages/actions/actions";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {ActionDetailComponent} from "../components/action-detail/action-detail";
 import {PopoverPage} from "../pages/popover/popover";
 import {ActionsComponent} from "../components/actions/actions";
 import{LoginPage} from "../pages/login/login";
@@ -15,7 +16,6 @@ import {RegistrationPage} from "../pages/registration/registration";
 import {TabsPage} from "../pages/tabs/tabs";
 import {BurgerMenuComponent} from "../components/burger-menu/burger-menu";
 import {ActionDetailPage} from "../pages/action-detail/action-detail";
-import {OutsideClickDirective} from "../directives/outside-click/outside-click";
 import {CustomSelectComponent} from "../components/custom-select/custom-select";
 import {SelectCategoriesComponent} from "../components/select-categories/select-categories";
 import {SelectSubcategoriesComponent} from "../components/select-subcategories/select-subcategories";
@@ -25,10 +25,12 @@ import {ItemControllComponent} from "../components/item-controll/item-controll";
 import {OrderPage} from "../pages/order/order";
 import {InputNumberComponent} from "../components/input-number/input-number";
 
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+      ActionDetailComponent,
       ActionsPage,
       PopoverPage,
       ActionsComponent,
@@ -46,7 +48,8 @@ import {InputNumberComponent} from "../components/input-number/input-number";
       ItemArrayComponent,
       ItemControllComponent,
       OrderPage,
-      InputNumberComponent
+      InputNumberComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import {InputNumberComponent} from "../components/input-number/input-number";
       ItemArrayComponent,
       ItemControllComponent,
       OrderPage,
-      InputNumberComponent
+      InputNumberComponent,
+      ActionDetailComponent
 
   ],
   providers: [

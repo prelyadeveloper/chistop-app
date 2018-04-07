@@ -4,6 +4,7 @@ input-number {
      position: relative;
     width: 107px;
     .minus{
+      text-align: center;
       background: #00B9D6;
       border-radius: 60px 0px 0px 60px;
       height: 32px;
@@ -13,6 +14,13 @@ input-number {
       top:0;
       display: inline-block;
       cursor: pointer;
+
+      ion-icon:before{
+        font-size: 3px;
+        color: white;
+        margin-top: 13px;
+      }
+
     }
 
     .plus{
@@ -22,21 +30,41 @@ input-number {
       height: 32px;
       width: 34px;
       position: absolute;
-     right: 0;
+      right: 0;
       display: inline-block;
       top:0;
+
+      text-align: center;
+      ion-icon:before{
+        font-size: 15px;
+        transform: rotate(134deg);
+        color: white;
+        margin-top: 8px;
+      }
 
       cursor: pointer;
     }
 
     .amount-input{
+      font-family: avantiBold;
+      appearance: none;
+      font-size: 18px;
       text-align: center;
-      padding: 0 35px 0 46px;
+      padding: 0 46px 0 46px;
       width: 100%;
       height: 32px;
       border-color: transparent;
       background: transparent;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button
+      {
+        -webkit-appearance: none;
+        margin: 0;
+      }
     }
+
+
   }
 
 }

@@ -1,4 +1,4 @@
- <div class="input-number-block"><span (click)="plus(input_number)" class="plus"></span>
+ <div class="input-number-block"><span (click)="plus(input_number)" class="plus"><ion-icon name="icon-delete"></ion-icon></span>
      <input type="number" #input_number class="amount-input"  [value]="initValue" min="0" disabled>
-     <span class="minus" (click)="minus(input_number)"></span>
+     <span class="minus" (click)="minus(input_number)"><ion-icon name="icon-minus"></ion-icon></span>
  </div>

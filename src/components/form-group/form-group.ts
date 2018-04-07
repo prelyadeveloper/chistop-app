@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {ItemArrayComponent} from "../item-array/item-array";
-import {FormArray,FormControl,FormBuilder, FormGroup} from "@angular/forms";
-import {Validators} from "@angular/forms";
+import {FormArray,FormBuilder, FormGroup} from "@angular/forms";
+
 
 import {Input} from "@angular/core";
 

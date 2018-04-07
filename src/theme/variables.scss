@@ -141,6 +141,9 @@ $colors: (
   }
 }
 
+@include makeIcon(icon-clothes, '\e91f');
+@include makeIcon(icon-minus, '\e91a');
+@include makeIcon(icon-delete, '\e900');
 @include makeIcon(icon-eco, '\e912');
 @include makeIcon(icon-iron, '\e911');
 @include makeIcon(icon-shirt, '\e915');
@@ -157,6 +160,14 @@ $colors: (
 
 
 
+body page-tabs .toolbar-background{
+  background-color:  #F4F9FC!important;
+}
+
+body .scroll-content{
+  background-color:  #F4F9FC!important;
+  padding: 7px;
+}
 @import "roboto";
 @import "noto-sans";
 

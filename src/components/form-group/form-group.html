@@ -1,13 +1,12 @@
-
-    <form [formGroup]="myForm" (ngSubmit)="submit()">
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+        <h3>Виберіть послугу зі списку</h3>
       <item-array [services]="services"
               formArrayName="services"
               [itemsFormArray]="myForm.get('services')">
       </item-array>
-      <hr>
-
         <p class="overall-amount">Сума замовлення: <span class="actual-price">{{overallSum}} гр</span></p>
-        <div>
+        <div class="textarea-block">
+            <p>Адреса доставки</p>
             <ion-grid no-padding="">
                 <ion-row>
                     <ion-col col-12>
@@ -17,9 +16,8 @@
             </ion-grid>
         </div>
         <div class="form-group">
-        <input type="submit" class="form-control" value="Submit" [disabled]="myForm?.invalid">
+            <button ion-button type="submit" block (click)="submit()"   [disabled]="myForm?.invalid">Замовити</button>
     </div>
         <div><pre><code>{{ myForm?.value | json }}</code></pre></div>
-
     </form>
 

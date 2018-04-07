@@ -1,6 +1,6 @@
 import { Directive } from '@angular/core';
-import {ElementRef} from "@angular/core";
-import {Input} from "@angular/core";
+
+
 import {EventEmitter} from "@angular/core";
 import {Output} from "@angular/core";
 import {HostListener} from "@angular/core";
@@ -17,7 +17,7 @@ import {HostListener} from "@angular/core";
 export class OutsideClickDirective {
 
     // @Input('appOutsideClick') aa;
-    constructor(private _elementRef: ElementRef) {
+    constructor() {
 
 alert(3);
     }
@@ -32,7 +32,7 @@ alert(3);
         // const clickedInside = this._elementRef.nativeElement.contains(targetElement);
         // if (!clickedInside && this.aa === 'show') {
             this.clickOutside.emit('s');
-            alert(333);
+
         // }
     }
 

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+// import { IonicPageModule } from 'ionic-angular';
 import { StartPage } from './start';
 
 @NgModule({
@@ -7,7 +7,7 @@ import { StartPage } from './start';
     StartPage,
   ],
   imports: [
-    IonicPageModule.forChild(StartPage),
+    // IonicPageModule.forChild(StartPage),
   ],
 })
 export class StartPageModule {}

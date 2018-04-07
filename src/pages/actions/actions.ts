@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
-import {NavController, NavParams} from "ionic-angular";
+
 import {HomePage} from "../home/home";
-import {ActionDetailPage} from "../action-detail/action-detail";
+
 
 /**
  * Generated class for the ActionsPage page.

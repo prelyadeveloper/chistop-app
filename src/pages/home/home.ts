@@ -1,6 +1,5 @@
-import {Component, ElementRef, HostListener} from '@angular/core';
-// import { NavController } from 'ionic-angular';
-import {FormBuilder, FormGroup, FormArray} from "@angular/forms";
+import {Component} from '@angular/core';
+import { FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'page-home',
@@ -12,7 +11,7 @@ export class HomePage {
   public fg: FormGroup;
 public services;
 
-  constructor(private fb: FormBuilder){
+  constructor(){
 
 
    this.services = [{

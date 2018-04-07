@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {HostListener} from "@angular/core";
-import {ElementRef} from "@angular/core";
 import {ChangeDetectionStrategy} from "@angular/core";
 import {Input, Output} from "@angular/core";
 import {EventEmitter} from "@angular/core";
@@ -26,8 +25,6 @@ export class CustomSelectComponent {
     @Input() set service(value){
 
         if(value.name === null){
-
-            console.log(value);
             this.input_inner = '<span>Пошук</span>'
         } else {
             this.setInnerHtml(value);
@@ -47,12 +44,8 @@ export class CustomSelectComponent {
         return this._services;
     }
 
-    constructor(private _elementRef: ElementRef) {
+    constructor() {
 
-        // if(!this.input_inner === undefined) {
-        //     alert(3);
-        // }
-        // this.input_inner = '<span>Пошук</span>'
     }
 
 
@@ -68,8 +61,8 @@ export class CustomSelectComponent {
 
     @HostListener('document:click', ['$event.target'])
     public onClick(targetElement) {
-        const clickedInside = this._elementRef.nativeElement.contains(targetElement);
-        if ( targetElement.className === 'select-overlay') {
+
+        if ( targetElement.className === 'select-overlay' && this.ifOpen()) {
           this.openSelect();
         }
     }

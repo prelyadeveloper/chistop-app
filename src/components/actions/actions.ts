@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {ActionDetailPage} from "../../pages/action-detail/action-detail";
-import {NavController, ModalController } from "ionic-angular";
+import {NavController} from "ionic-angular";
 
 /**
  * Generated class for the ActionsComponent component.
@@ -18,7 +18,7 @@ export class ActionsComponent {
 
   actionsList;
 
-  constructor(private nav: NavController, private modalCtrl: ModalController) {
+  constructor(private nav: NavController) {
     console.log('Hello ActionsComponent Component');
     this.text = 'Hello World';
 
