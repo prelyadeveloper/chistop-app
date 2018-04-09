@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage} from 'ionic-angular';
-import {OrderPage} from "../order/order";
+import {IonicPage, NavController} from 'ionic-angular';
+
 import {ActionsPage} from "../actions/actions";
 import {HomePage} from "../home/home";
 import{ PricesPage} from "../prices/prices";
+import { Events} from "ionic-angular";
+import {OrderPage} from "../order/order";
+import {ViewChild} from "@angular/core";
 
 /**
  * Generated class for the TabsPage page.
@@ -19,16 +22,18 @@ import{ PricesPage} from "../prices/prices";
 })
 export class TabsPage {
 
+  @ViewChild('myTabs') tabs;
   ActionsPage = ActionsPage;
   PricesPage = PricesPage;
   HomePage = HomePage;
-
     OrderPage = OrderPage;
-  constructor() {
+  constructor(private events: Events, private nav: NavController) {
+
+      this.events.subscribe('goToOrders',() =>{
+          this.tabs.select(2);
+      })
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TabsPage');
-  }
 
 }

@@ -25,6 +25,9 @@ import {ItemControllComponent} from "../components/item-controll/item-controll";
 import {OrderPage} from "../pages/order/order";
 import {InputNumberComponent} from "../components/input-number/input-number";
 import {PricesPage} from "../pages/prices/prices";
+import { PriceToOrderProvider } from '../providers/price-to-order/price-to-order';
+import { CategoriesProvider } from '../providers/categories/categories';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -54,7 +57,9 @@ import {PricesPage} from "../pages/prices/prices";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+      BrowserAnimationsModule,
+    IonicModule.forRoot(MyApp),
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -84,7 +89,9 @@ import {PricesPage} from "../pages/prices/prices";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PriceToOrderProvider,
+    CategoriesProvider
   ]
 })
 export class AppModule {}

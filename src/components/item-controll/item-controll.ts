@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Input, Output} from "@angular/core";
 import {FormGroup, FormControl} from "@angular/forms";
 import {EventEmitter} from "@angular/core";
+import {scaleAnimation} from "../../animations/router.animations";
 
 /**
  * Generated class for the ItemControllComponent component.
@@ -11,7 +12,11 @@ import {EventEmitter} from "@angular/core";
  */
 @Component({
   selector: 'item-controll',
-  templateUrl: 'item-controll.html'
+  templateUrl: 'item-controll.html',
+    animations: [
+
+        scaleAnimation()
+    ]
 })
 export class ItemControllComponent {
 
@@ -47,7 +52,11 @@ export class ItemControllComponent {
         return this.item.controls['amount'].value === 0 &&  this.item.controls['price'].value === null;
     }
 
-    static buildItem(id: number = null, name: string = null, price:number = null, amount: number) {
+    ifCanChange() {
+      return this.getControllValue('price') !== 0;
+    }
+
+    static buildItem(id: number , name: string, price:number, amount: number) {
         return new FormGroup({
             id: new FormControl(id),
             name: new FormControl(name),

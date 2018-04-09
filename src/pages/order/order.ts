@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {CategoriesProvider} from "../../providers/categories/categories";
+
 
 /**
  * Generated class for the OrderPage page.
@@ -16,48 +18,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class OrderPage {
 
   services;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // savedServ = [{id:null,name:null,price:0,amount:0}];
+  constructor(public navCtrl: NavController, public navParams: NavParams, public catPr: CategoriesProvider) {
 
+      this.services = this.catPr.getServices();
 
-      this.services = [{
-          id:1,
-          name :'Чистка текстилю',
-          list:[{id:1,name:'Головний убір, шарф, рукавиці, хустина',price:'22'},
-              {id:2,name:' Жилет, безрукавка',price:'43'},
-              {id:1,name:' Пальто, півпальто, плащ, пончо',price:'65'}],
-          icon:'icon-water'
-      },
-          {
-              id:2,
-              name :'Фарбування текстилю',
-              list:[],
-              icon:'icon-paint'
-          },
-          {
-              id:3,
-              name :'Aквачистка',
-              list:[],
-              icon:'icon-shirt'
-          },
-
-          {
-              id:3,
-              name :'Еко чистка',
-              list:[],
-              icon:'icon-eco'
-          },
-          {
-              id:3,
-              name :'Прасування',
-              list:[],
-              icon:'icon-iron'
-          }
-      ]
   }
+    ngAfterViewInit() {
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OrderPage');
   }
+    ionViewWillEnter(){
+
+
+    }
+
+
+
+
 
 
 

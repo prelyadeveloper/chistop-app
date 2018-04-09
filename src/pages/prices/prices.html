@@ -13,21 +13,23 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding style="position: relative">
 
   <ion-grid>
     <ion-row>
-      <ion-col col-12>
-        <input #inputValue (keyup)="search(inputValue)" type="text">
-      </ion-col>
+
     </ion-row>
-    <ion-row *ngIf="view === 'cat'">
+    <ion-row style="position:relative;">
+    <ion-row *ngIf="view === 'cat'" >
+      <ion-col col-12>
+        <input #inputValue (keyup)="search()" type="text">
+      </ion-col>
     <ion-row *ngFor="let item of sortedServices">
-      <ion-col (click)="showSubCat(item.id, inputValue)" col-6>
+      <ion-col  col-6     (click)="showSubCat(item.id, inputValue)">
         <ion-col>
           <ion-icon [name]="item.icon"></ion-icon>
         </ion-col>
-        <ion-col>
+        <ion-col >
           {{item.name}}
         </ion-col>
       </ion-col>
@@ -35,14 +37,28 @@
     </ion-row>
 
 
+
     <ion-row *ngIf="view === 'subcat'">
-      <ion-col  col-12><span (click)="showCat(inputValue)">go back</span></ion-col>
+      <ion-col col-12>
+        <input #inputValue (keyup)="search()" type="text">
+      </ion-col>
+      <ion-col  col-12><span (click)="showCat()">go back</span></ion-col>
       <ion-row *ngFor="let item of sortedServiceList">
-        <ion-col  col-12>
-          <ion-col>
+        <ion-col  col-12 >
+          <ion-col >
             {{item.name}}
           </ion-col>
+          <ion-col>
+            <input-number (ChangeValue)="ChangeValue($event, item)" [initValue]="0"></input-number>
+          </ion-col>
         </ion-col>
+      </ion-row>
+      <ion-col col-12>{{overallPrice}}</ion-col>
+      <ion-col><button ion-button (click)="goToOrder()">Submit</button></ion-col>
+    </ion-row>
+
+      <ion-row>
+
       </ion-row>
     </ion-row>
 

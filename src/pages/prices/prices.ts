@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Events} from "ionic-angular";
+import {CategoriesProvider} from "../../providers/categories/categories";
+import {ViewChild} from "@angular/core";
+import {trigger, transition, style, animate, useAnimation} from "@angular/animations";
+import {HostBinding} from "@angular/core";
+
 
 /**
  * Generated class for the PricesPage page.
@@ -11,66 +17,48 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-prices',
-  templateUrl: 'prices.html',
+  templateUrl: 'prices.html'
 })
 export class PricesPage {
+    @ViewChild('inputValue') input;
     services;
     sortedServices;
     sortedServiceList;
     subCat;
-
+    savedServices = [];
+    overallPrice = 0;
     view: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    bindingVar = '';
+    shift = '';
 
+
+    // @HostBinding('@routerTransition') get Slide() {
+    //     return true;
+    // }
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private events: Events, private catPr: CategoriesProvider) {
     this.view = 'cat';
-      this.services = [{
-          id:1,
-          name :'Чистка текстилю',
-          list:[{id:1,name:'Головний убір, шарф, рукавиці, хустина',price:'22'},
-              {id:2,name:' Жилет, безрукавка',price:'43'},
-              {id:1,name:' Пальто, півпальто, плащ, пончо',price:'65'}],
-          icon:'icon-water'
-      },
-          {
-              id:2,
-              name :'Фарбування текстилю',
-              list:[],
-              icon:'icon-paint'
-          },
-          {
-              id:3,
-              name :'Аквачистка',
-              list:[],
-              icon:'icon-shirt'
-          },
-
-          {
-              id:3,
-              name :'Еко чистка',
-              list:[],
-              icon:'icon-eco'
-          },
-          {
-              id:3,
-              name :'Прасування',
-              list:[],
-              icon:'icon-iron'
-          }
-      ]
+      this.services = this.catPr.getServices();
 
       this.sortedServices = this.services;
   }
 
-    search(input: HTMLInputElement){
+toggle(){
+
+      this.shift =  this.shift ==='leave' ? 'enter' : 'leave';
+      alert(0);
+}
+
+    search(){
       if (this.view === 'cat') {
-          this.servicesSort(input.value);
+          this.servicesSort(this.input.nativeElement.value);
       } else {
-        this.serviceListSort(input.value);
+        this.serviceListSort(this.input.nativeElement.value);
       }
     }
 
-    showSubCat(id : number, input: HTMLInputElement){
-        input.value = '';
+    showSubCat(id : number){
+        this.input.nativeElement.value = '';
         this.subCat = this.findSubCat(id);
         this.sortedServiceList = this.subCat.list;
         this.view = 'subcat';
@@ -89,8 +77,8 @@ export class PricesPage {
         this.sortedServices =  this.sort(this.services, input);
     }
 
-    showCat(input: HTMLInputElement){
-        input.value = '';
+    showCat(){
+        this.input.nativeElement.value = '';
         this.servicesSort('');
         this.view = 'cat';
     }
@@ -105,9 +93,47 @@ export class PricesPage {
         return someArr;
     }
 
+    ChangeValue(amount, item){
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PricesPage');
-  }
+      let service = item;
 
+      service.amount = amount;
+
+       let index =  this.savedServices.findIndex(value => { return value.id === item.id});
+
+        if (index === -1) {
+          this.savedServices.push(item);
+        } else if(index !== -1) {
+            if(amount === 0) {
+                this.savedServices.splice(index,1);
+            } else {
+                this.savedServices[index].amount = amount;
+            }
+        }
+        this.countAmount();
+    }
+
+    countAmount(){
+        this.overallPrice = 0;
+
+        if(this.savedServices.length > 0) {
+            this.savedServices.forEach(item => {
+                this.overallPrice+= item.amount * item.price;
+            })
+        }
+    }
+
+    goToOrder() {
+        this.showCat();
+        let serv = this.savedServices;
+        this.events.publish('savedSrv',1,serv)
+        this.savedServices = [];
+    }
+
+    ionViewDidLeave(){
+        this.showCat();
+        this.savedServices = [];
+        this.overallPrice = 0;
+
+    }
 }

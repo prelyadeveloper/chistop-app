@@ -18,7 +18,6 @@ export class ItemArrayComponent {
 
         @Input() services;
 
-
     static buildItems( services) {
         let ar = new FormArray([]);
         services.forEach(service => {
@@ -30,7 +29,12 @@ export class ItemArrayComponent {
     @Input()
     public itemsFormArray: FormArray;
 
-    addItem() {
-        this.itemsFormArray.push(ItemControllComponent.buildItem(null,null,0,0))
+    addItem(id,name,price,amount) {
+        this.itemsFormArray.push(ItemControllComponent.buildItem(id,name,price,amount))
     }
+
+    removeItems(){
+        this.itemsFormArray.reset();
+    }
+
 }

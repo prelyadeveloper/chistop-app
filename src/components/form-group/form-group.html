@@ -4,6 +4,9 @@
               formArrayName="services"
               [itemsFormArray]="myForm.get('services')">
       </item-array>
+    <p class="add-service p-style">
+        <span>Додати послугу</span><button type="button" class="btn btn-link"  [disabled]="!ifCanAdd()" (click)="addItem()"><ion-icon name="icon-delete"></ion-icon></button>
+    </p>
         <p class="overall-amount">Сума замовлення: <span class="actual-price">{{overallSum}} гр</span></p>
         <div class="textarea-block">
             <p>Адреса доставки</p>
