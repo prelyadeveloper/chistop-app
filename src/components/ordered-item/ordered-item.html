@@ -1,0 +1,13 @@
+<div class="ordered-item" >
+  <p><span  [ngStyle]="ifReady(item)">№{{item.id}}</span><span>{{item.type}}</span></p>
+  <p>{{item.name}}</p>
+  <p><span>{{item.from}}</span><span>{{item.to}}</span></p>
+  <p class="order-process">
+    <span></span>
+    <span></span>
+    <span  [ngStyle]="{'background':item.state ? '#BDBDBD' : '#27AE60'}"></span>
+  </p>
+  <p class="order-state" [ngStyle]="ifReady(item)">{{item.state? 'На стадії чистки' : 'Замовлення виконано'}}</p>
+  <p><span>Ціна: 79 грн</span> <span >{{item.state? 'По заверщенню ви отримаете повідомлення' : ' Завершено'}}
+      </span></p>
+</div>

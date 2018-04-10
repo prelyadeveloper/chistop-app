@@ -29,7 +29,7 @@ export class FormGroupComponent {
 
     ngOnInit() {
         this.events.subscribe('savedSrv',(items,params) =>{
-
+            //
             this.removeArrayContr();
 
             setTimeout(()=>{
@@ -55,14 +55,14 @@ export class FormGroupComponent {
     submit() {
 
 
-    }
+}
 
-    removeArrayContr(){
-        let length = this.getArrLength();
-            for(var i = 0; i <= length; i++) {
-                (this.myForm.controls['services'] as FormArray).removeAt(i-1);
-        }
+removeArrayContr(){
+    let length = this.getArrLength();
+    for(var i = 0; i <= length; i++) {
+        (this.myForm.controls['services'] as FormArray).removeAt(i);
     }
+}
 
     addSavedItems(serv){
         serv.forEach(value => {
@@ -76,8 +76,11 @@ export class FormGroupComponent {
     }
 
     ifCanAdd(){
-        let contr = (this.myForm.controls['services'] as FormArray).controls[this.getArrLength() -1 ] as FormGroup;
-        return  contr.controls.amount.value > 0 ;
+        if(this.getArrLength()){
+            let contr = (this.myForm.controls['services'] as FormArray).controls[this.getArrLength() -1  ] as FormGroup;
+            return  contr.controls.amount.value > 0 ;
+        }
+
     }
 
 

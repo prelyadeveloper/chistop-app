@@ -28,6 +28,14 @@ import {PricesPage} from "../pages/prices/prices";
 import { PriceToOrderProvider } from '../providers/price-to-order/price-to-order';
 import { CategoriesProvider } from '../providers/categories/categories';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {OrderedPage} from "../pages/ordered/ordered";
+import {OrderedItemComponent} from "../components/ordered-item/ordered-item";
+import {OrderedItemPage} from "../pages/ordered-item/ordered-item";
+import {DepartmentComponent} from "../components/department/department";
+import {DepartmentPage} from "../pages/department/department";
+import {CommmonButtonComponent} from "../components/commmon-button/commmon-button";
+import {DepartmentMapsPage} from "../pages/department-maps/department-maps";
+import {DepartmentListsPage} from "../pages/department-lists/department-lists";
 
 @NgModule({
   declarations: [
@@ -52,8 +60,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
       ItemControllComponent,
       OrderPage,
       InputNumberComponent,
-      PricesPage
-
+      PricesPage,
+      OrderedPage,
+      OrderedItemComponent,
+      OrderedItemPage,
+      DepartmentComponent,
+      DepartmentPage,
+      CommmonButtonComponent,
+      DepartmentListsPage,
+      DepartmentMapsPage
   ],
   imports: [
     BrowserModule,
@@ -83,7 +98,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
       ItemControllComponent,
       OrderPage,
       InputNumberComponent,
-      ActionDetailComponent
+      ActionDetailComponent,
+      OrderedPage,
+      OrderedItemComponent,
+      OrderedItemPage,
+      DepartmentComponent,
+      DepartmentPage,
+      CommmonButtonComponent,
+      DepartmentListsPage,
+      DepartmentMapsPage
 
   ],
   providers: [

@@ -140,7 +140,7 @@ $colors: (
     font-size: 26px;
   }
 }
-
+@include makeIcon(icon-magnifier, '\e919');
 @include makeIcon(icon-clothes, '\e91f');
 @include makeIcon(icon-minus, '\e91a');
 @include makeIcon(icon-delete, '\e900');

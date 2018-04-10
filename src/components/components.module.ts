@@ -11,6 +11,9 @@ import { ItemControllComponent } from './item-controll/item-controll';
 import { ItemArrayComponent } from './item-array/item-array';
 import { FormGroupComponent } from './form-group/form-group';
 import { InputNumberComponent } from './input-number/input-number';
+import { OrderedItemComponent } from './ordered-item/ordered-item';
+import { DepartmentComponent } from './department/department';
+import { CommmonButtonComponent } from './commmon-button/commmon-button';
 @NgModule({
 	declarations: [ActionsComponent,
     ActionDetailComponent,
@@ -23,7 +26,10 @@ import { InputNumberComponent } from './input-number/input-number';
     ItemControllComponent,
     ItemArrayComponent,
     FormGroupComponent,
-    InputNumberComponent],
+    InputNumberComponent,
+    OrderedItemComponent,
+    DepartmentComponent,
+    CommmonButtonComponent],
 	imports: [],
 	exports: [ActionsComponent,
     ActionDetailComponent,
@@ -36,6 +42,9 @@ import { InputNumberComponent } from './input-number/input-number';
     ItemControllComponent,
     ItemArrayComponent,
     FormGroupComponent,
-    InputNumberComponent]
+    InputNumberComponent,
+    OrderedItemComponent,
+    DepartmentComponent,
+    CommmonButtonComponent]
 })
 export class ComponentsModule {}

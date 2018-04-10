@@ -7,54 +7,57 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>prices</ion-title>
+    <ion-title>Ціни</ion-title>
+    <burger-menu></burger-menu>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding style="position: relative">
+<ion-content  style="position: relative">
 
-  <ion-grid>
-    <ion-row>
-
-    </ion-row>
+  <div class="input-div ">
+    <ion-icon name="icon-magnifier"></ion-icon>
+    <input #inputValue (keyup)="search()" placeholder="Пошук" type="text">
+  </div>
+  <ion-grid no-padding="">
     <ion-row style="position:relative;">
     <ion-row *ngIf="view === 'cat'" >
-      <ion-col col-12>
-        <input #inputValue (keyup)="search()" type="text">
-      </ion-col>
-    <ion-row *ngFor="let item of sortedServices">
-      <ion-col  col-6     (click)="showSubCat(item.id, inputValue)">
-        <ion-col>
-          <ion-icon [name]="item.icon"></ion-icon>
+
+      <ion-row class="price-block">
+        <ion-col col-12>
+          <p class="or-category">Або виберіть категорію</p>
         </ion-col>
-        <ion-col >
+    <ion-row >
+      <ion-col  *ngFor="let item of sortedServices" col-6     (click)="showSubCat(item.id, inputValue)">
+        <ion-col col-4>
+          <ion-icon color="primary" [name]="item.icon"></ion-icon>
+        </ion-col>
+        <ion-col col-8>
           {{item.name}}
         </ion-col>
       </ion-col>
     </ion-row>
     </ion-row>
+    </ion-row>
 
 
-
-    <ion-row *ngIf="view === 'subcat'">
+    <ion-row *ngIf="view === 'subcat'" class="price-block">
       <ion-col col-12>
-        <input #inputValue (keyup)="search()" type="text">
+        <p class="or-category" ><ion-icon color="primary" [name]="subCat.icon"></ion-icon><span >{{subCat.name}}</span></p>
       </ion-col>
-      <ion-col  col-12><span (click)="showCat()">go back</span></ion-col>
-      <ion-row *ngFor="let item of sortedServiceList">
-        <ion-col  col-12 >
-          <ion-col >
-            {{item.name}}
+      <!--<ion-col  col-12><span (click)="showCat()">go back</span></ion-col>-->
+      <ion-col no-padding *ngFor="let item of sortedServiceList" style="margin-bottom: 17px;">
+          <ion-col col-6 col-sm-6 no-padding style="justify-content: end">
+            <span>{{item.name}}</span>
           </ion-col>
-          <ion-col>
+          <ion-col col-2 col-sm-1 class="blue-bold">шт. {{item.price}}</ion-col>
+          <ion-col col-4 col-sm-5>
             <input-number (ChangeValue)="ChangeValue($event, item)" [initValue]="0"></input-number>
           </ion-col>
         </ion-col>
-      </ion-row>
-      <ion-col col-12>{{overallPrice}}</ion-col>
-      <ion-col><button ion-button (click)="goToOrder()">Submit</button></ion-col>
+      <ion-col col-12><p class="overall-amount">Сума замовлення: <span class="actual-price">{{overallPrice}} гр</span></p></ion-col>
+      <ion-col><button ion-button (click)="goToOrder()">Замовити </button></ion-col>
     </ion-row>
 
       <ion-row>

@@ -18,12 +18,12 @@
 <!--</ion-content>-->
 <!--<ion-footer>-->
 <div class="block-tabbar">
-  <ion-tabs selectedIndex="2" [tabsLayout]="icon-show" #myTabs>
-    <ion-tab  [root]="HomePage" tabTitle="Замовлення" tabIcon="icon-clothes" class="icon-placeholder-filled-point"></ion-tab>
+  <ion-tabs selectedIndex="0" [tabsLayout]="icon-show" #myTabs>
+    <ion-tab  [root]="OrderedPage" tabTitle="Замовлення" tabIcon="icon-clothes" class="icon-placeholder-filled-point"></ion-tab>
     <ion-tab  [root]="ActionsPage"   tabTitle="Акції"  tabIcon="icon-sales"></ion-tab>
     <ion-tab  [root]="OrderPage"  tabTitle="Замовити" tabIcon="icon-logistics-delivery-truck-in-movement"></ion-tab>
     <ion-tab   [root]="PricesPage" tabTitle="Ціни" tabIcon="icon-tag"></ion-tab>
-    <ion-tab  tabTitle="Відділення" tabIcon="icon-placeholder-filled-point"></ion-tab>
+    <ion-tab  [root]="DepartmentPage" tabTitle="Відділення" tabIcon="icon-placeholder-filled-point"></ion-tab>
   </ion-tabs>
 </div>
 <!--</ion-footer>-->

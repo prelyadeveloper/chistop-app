@@ -1,10 +1,10 @@
 <p [formGroup]="item" class="p-style" [@ScaleAnim]="true">
   <ion-grid no-padding>
     <ion-row>
-      <ion-col  col-sm-4 col-md-4 col-lg-8 class="some-class my-col-sm">
+      <ion-col  col-4 col-sm-4 col-md-4 col-lg-8 class="some-class my-col-sm">
 <input-number (ChangeValue)="ChangeValue($event)" [CanChange]="ifCanChange()" [disable]="ifZero()" [controlName]="'amount'" [initValue]="getControllValue('amount')"></input-number>
       </ion-col>
-      <ion-col  col-8 col-sm-8 col-md-8 class="my-col-sm">
+      <ion-col col-8 col-8 col-sm-8 col-md-8 class="my-col-sm">
         <custom-select  [service]="{'name':getControllValue('name'),'price':getControllValue('price')}" (SelectCat)="SelectCat($event)" [services]="services"></custom-select>
       </ion-col>
     </ion-row>

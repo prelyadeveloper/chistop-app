@@ -1,0 +1,28 @@
+<!--
+  Generated template for the OrderedItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Замовлення № {{item.id}}</ion-title>
+    <burger-menu></burger-menu>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="ordered-wrapper">
+    <ordered-item [item]="item"></ordered-item>
+    <department [item]="item.department"></department>
+    <div class="buttons-wrapper">
+      <button ion-button>Зателефонувати</button>
+      <button ion-button>Замовити Доставку</button>
+      <button ion-button>Маршрут GPS</button>
+    </div>
+  </div>
+</ion-content>

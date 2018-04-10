@@ -7,6 +7,8 @@ import{ PricesPage} from "../prices/prices";
 import { Events} from "ionic-angular";
 import {OrderPage} from "../order/order";
 import {ViewChild} from "@angular/core";
+import {OrderedPage} from "../ordered/ordered";
+import {DepartmentPage} from "../department/department";
 
 /**
  * Generated class for the TabsPage page.
@@ -27,6 +29,8 @@ export class TabsPage {
   PricesPage = PricesPage;
   HomePage = HomePage;
     OrderPage = OrderPage;
+    DepartmentPage = DepartmentPage;
+    OrderedPage = OrderedPage;
   constructor(private events: Events, private nav: NavController) {
 
       this.events.subscribe('goToOrders',() =>{

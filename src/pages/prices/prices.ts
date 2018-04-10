@@ -32,9 +32,6 @@ export class PricesPage {
     shift = '';
 
 
-    // @HostBinding('@routerTransition') get Slide() {
-    //     return true;
-    // }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private events: Events, private catPr: CategoriesProvider) {
     this.view = 'cat';
