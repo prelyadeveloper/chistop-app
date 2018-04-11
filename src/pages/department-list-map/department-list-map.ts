@@ -3,13 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ElementRef, ViewChild} from "@angular/core";
 declare var google;
 import {CategoriesProvider} from "../../providers/categories/categories";
-
-/**
- * Generated class for the DepartmentListMapPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {Geolocation} from "@ionic-native/geolocation";
 
 @IonicPage()
 @Component({
@@ -22,34 +16,70 @@ export class DepartmentListMapPage {
     map: any;
     id;
     department;
+    userCoord;
+    cityCoordinates;
   constructor(public navCtrl: NavController
               , public navParams: NavParams,
-              private catPr: CategoriesProvider
+              private catPr: CategoriesProvider,
+              private geolocation: Geolocation
   ) {
-
       let cityId = this.navParams.get('city');
       let depId = this.navParams.get('dep');
 
+      this.geolocation.getCurrentPosition().then((resp) => {
+           // resp.coords.latitude;
+           // resp.coords.longitude;
+           this.userCoord = resp;
+      }).catch((error) => {
+          console.log('Error getting location', error);
+      });
 
-     this.department = this.catPr.getDepartmentByCityAndDepId(cityId, depId);
+      this.cityCoordinates = this.catPr.getCityCoordinates(cityId);
+      this.department = this.catPr.getDepartmentByCityAndDepId(cityId, depId);
   }
 
     loadMap(){
 
-        let latLng = new google.maps.LatLng(this.department.coordinates.lat,this.department.coordinates.ln);
+        let latLng = new google.maps.LatLng( this.cityCoordinates.lat,this.cityCoordinates.ln);
 
         let mapOptions = {
             center: latLng,
-            zoom: 15,
+            zoom: 10,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
 
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
+        this.addMarker(new google.maps.LatLng(49.868581,24.057544),'../../assets/imgs/you_here.png');
+        this.addMarker(new google.maps.LatLng(this.department.coordinates.lat,this.department.coordinates.ln),'../../assets/imgs/ic_location.png');
     }
 
-  ionViewDidLoad() {
-      this.loadMap();
-  }
+    addMarker(position, icon){
+
+        let marker = new google.maps.Marker({
+            map: this.map,
+            animation: google.maps.Animation.DROP,
+            position: position,
+            icon:icon
+        });
+
+        let content = "<h4>Information!</h4>";
+
+        this.addInfoWindow(marker, content);
+    }
+
+    addInfoWindow(marker, content){
+
+        let infoWindow = new google.maps.InfoWindow({
+            content: content
+        });
+        google.maps.event.addListener(marker, 'click', () => {
+            infoWindow.open(this.map, marker);
+        });
+
+    }
+      ionViewDidLoad() {
+          this.loadMap();
+      }
 
 }

@@ -24,8 +24,8 @@
   </form>
 
 
-    <ion-grid (click)="goTo(departments.cityId, dep.depId)" class="single-department" *ngFor="let dep of departments.list">
-      <department-list-item [dep]="dep">
+    <ion-grid (click)="goTo(departments.cityId, dep.depId)"  *ngFor="let dep of departments.list">
+      <department-list-item  [dep]="dep">
       </department-list-item>
     </ion-grid>
 </ion-content>

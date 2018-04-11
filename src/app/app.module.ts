@@ -38,6 +38,7 @@ import {DepartmentMapsPage} from "../pages/department-maps/department-maps";
 import {DepartmentListsPage} from "../pages/department-lists/department-lists";
 import {DepartmentListItemComponent} from "../components/department-list-item/department-list-item";
 import {DepartmentListMapPage} from "../pages/department-list-map/department-list-map";
+import {Geolocation} from "@ionic-native/geolocation";
 
 @NgModule({
   declarations: [
@@ -120,7 +121,8 @@ import {DepartmentListMapPage} from "../pages/department-list-map/department-lis
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PriceToOrderProvider,
-    CategoriesProvider
+    CategoriesProvider,
+      Geolocation
   ]
 })
 export class AppModule {}
