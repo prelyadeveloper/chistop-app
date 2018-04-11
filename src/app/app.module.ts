@@ -36,6 +36,8 @@ import {DepartmentPage} from "../pages/department/department";
 import {CommmonButtonComponent} from "../components/commmon-button/commmon-button";
 import {DepartmentMapsPage} from "../pages/department-maps/department-maps";
 import {DepartmentListsPage} from "../pages/department-lists/department-lists";
+import {DepartmentListItemComponent} from "../components/department-list-item/department-list-item";
+import {DepartmentListMapPage} from "../pages/department-list-map/department-list-map";
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import {DepartmentListsPage} from "../pages/department-lists/department-lists";
       DepartmentPage,
       CommmonButtonComponent,
       DepartmentListsPage,
-      DepartmentMapsPage
+      DepartmentMapsPage,
+      DepartmentListItemComponent,
+      DepartmentListMapPage
   ],
   imports: [
     BrowserModule,
@@ -106,7 +110,9 @@ import {DepartmentListsPage} from "../pages/department-lists/department-lists";
       DepartmentPage,
       CommmonButtonComponent,
       DepartmentListsPage,
-      DepartmentMapsPage
+      DepartmentMapsPage,
+      DepartmentListItemComponent,
+      DepartmentListMapPage
 
   ],
   providers: [

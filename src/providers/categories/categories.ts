@@ -20,60 +20,85 @@ export class CategoriesProvider {
 
     this.departments = [
         {
-            id:1,
+            cityId:1,
             city:'Львів',
             list:[
                 {
+                    depId:7,
                     dpNumber:'Львів. Відділення №5',
                     address:'Львів, вул. Виговського, 100***',
                     hint:'ТЦ “ВАМ” вхід з вулиці Виговського та головного входу ТЦ',
                     shedule:'пн. - суб. 9.00-21.00',
-                    tel:'(032) 295 20'
+                    tel:'(032) 295 20',
+                    coordinates: {
+                        lat:49.828197,
+                        ln:23.990703
+                    }
                 },
                 {
+                    depId:6,
                     dpNumber:'Львів. Відділення №5',
                     address:'Львів, вул. Виговського, 100***',
                     hint:'ТЦ “ВАМ” вхід з вулиці Виговського та головного входу ТЦ',
                     shedule:'пн. - суб. 9.00-21.00',
-                    tel:'(032) 295 20'
+                    tel:'(032) 295 20',
+                    coordinates: {
+                        lat:49.812347,
+                        ln:23.986461
+                    }
                 }
             ]
         },
         {
-            id:2,
+            cityId:2,
             city:'Стрий',
             list:[
                 {
+                    depId:3,
                     dpNumber:'Львів. Відділення №5',
                     address:'Львів, вул. Виговського, 100***',
                     hint:'ТЦ “ВАМ” вхід з вулиці Виговського та головного входу ТЦ',
                     shedule:'пн. - суб. 9.00-21.00',
-                    tel:'(032) 295 20'
+                    tel:'(032) 295 20',
+                    coordinates: {
+                        lat:49.828197,
+                        ln:23.990703
+                    }
                 }
                 ]
         },
         {
-            id:3,
+            cityId:3,
             city:'Червоноград',
             list:[
-                {
+                {   depId:2,
                     dpNumber:'Львів. Відділення №5',
                     address:'Львів, вул. Виговського, 100***22',
                     hint:'ТЦ “ВАМ” вхід з вулиці Виговського та головного входу ТЦ',
                     shedule:'пн. - суб. 9.00-21.00',
-                    tel:'(032) 295 20'
+                    tel:'(032) 295 20',
+                    coordinates: {
+                        lat:49.828197,
+                        ln:23.990703
+                    }
                 }]
         },
         {
-            id:4,
+            cityId:4,
             city:'Дрогобич',
             list:[
                 {
+                    depId:1,
                     dpNumber:'Львів. Відділення №5',
                     address:'Львів, вул. Виговського, 100***11',
                     hint:'ТЦ “ВАМ” вхід з вулиці Виговського та головного входу ТЦ',
                     shedule:'пн. - суб. 9.00-21.00',
-                    tel:'(032) 295 20'
+                    tel:'(032) 295 20',
+                    coordinates: {
+                        lat:49.828197,
+                        ln:23.990703
+                    }
+
                 }]
         }
 
@@ -149,11 +174,18 @@ export class CategoriesProvider {
           }
       ];
   }
+  getDepartmentByCityAndDepId(cityId, depId){
+      let deps = this.getDepartmentsByCityId(cityId).list;
 
-  getDepartmentsById(id){
+      return deps.find(item => {
+          return item.depId == depId;
+      })
+  }
+
+  getDepartmentsByCityId(id){
       return this.departments.find(item => {
-          return item.id === id;
-      }).list;
+          return item.cityId === id;
+      });
   }
 
 
@@ -162,7 +194,7 @@ export class CategoriesProvider {
       let departments = [];
 
       this.departments.forEach(item => {
-          departments.push({id:item.id, city: item.city});
+          departments.push({id:item.cityId, city: item.city});
       })
 
       return departments;

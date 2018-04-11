@@ -14,6 +14,7 @@ import { InputNumberComponent } from './input-number/input-number';
 import { OrderedItemComponent } from './ordered-item/ordered-item';
 import { DepartmentComponent } from './department/department';
 import { CommmonButtonComponent } from './commmon-button/commmon-button';
+import { DepartmentListItemComponent } from './department-list-item/department-list-item';
 @NgModule({
 	declarations: [ActionsComponent,
     ActionDetailComponent,
@@ -29,7 +30,8 @@ import { CommmonButtonComponent } from './commmon-button/commmon-button';
     InputNumberComponent,
     OrderedItemComponent,
     DepartmentComponent,
-    CommmonButtonComponent],
+    CommmonButtonComponent,
+    DepartmentListItemComponent],
 	imports: [],
 	exports: [ActionsComponent,
     ActionDetailComponent,
@@ -45,6 +47,7 @@ import { CommmonButtonComponent } from './commmon-button/commmon-button';
     InputNumberComponent,
     OrderedItemComponent,
     DepartmentComponent,
-    CommmonButtonComponent]
+    CommmonButtonComponent,
+    DepartmentListItemComponent]
 })
 export class ComponentsModule {}
