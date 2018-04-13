@@ -85,7 +85,7 @@ export class CategoriesProvider {
                         ln:23.853110
                     }
                 }
-                ]
+            ]
         },
         {
             cityId:3,
@@ -134,6 +134,7 @@ export class CategoriesProvider {
 
       this.services = [{
           id:1,
+          cityId:1,
           name :'Чистка текстилю',
           list:[{id:1,name:'Головний убір, шарф, рукавиці, хустина',price:'22'},
               {id:2,name:' Жилет, безрукавка',price:'43'},
@@ -141,30 +142,55 @@ export class CategoriesProvider {
           icon:'icon-water'
       },
           {
-              id:2,
-              name :'Фарбування текстилю',
-              list:[],
-              icon:'icon-paint'
-          },
-          {
-              id:3,
-              name :'Аквачистка',
-              list:[],
-              icon:'icon-shirt'
-          },
+              id:1,
+              cityId:2,
+              name :'Чистка текстилю',
+              list:[{id:1,name:'Головний убір, шарф, рукавиці, хустина',price:'11'},
+                  {id:2,name:' Жилет, безрукавка',price:'33'},
+                  {id:3,name:' Пальто, півпальто, плащ, пончо',price:'544'}],
+              icon:'icon-water'
 
-          {
-              id:3,
-              name :'Еко чистка',
-              list:[],
-              icon:'icon-eco'
-          },
-          {
-              id:3,
-              name :'Прасування',
-              list:[],
-              icon:'icon-iron'
           }
+          ,
+          {
+              id:1,
+              cityId:2,
+              name :'Фарбування\n' +
+              'текстилю',
+              list:[{id:1,name:'Постільна білизна (комплект)',price:'22'},
+                  {id:2,name:'Шорти, бріджі',price:'43'}],
+              icon:'icon-water'
+          }
+
+          // {
+          //     id:2,
+          //     cityId:1,
+          //     name :'Фарбування текстилю',
+          //     list:[],
+          //     icon:'icon-paint'
+          // },
+          // {
+          //     id:3,
+          //     cityId:1,
+          //     name :'Аквачистка',
+          //     list:[],
+          //     icon:'icon-shirt'
+          // },
+          //
+          // {
+          //     id:3,
+          //     cityId:1,
+          //     name :'Еко чистка',
+          //     list:[],
+          //     icon:'icon-eco'
+          // },
+          // {
+          //     id:3,
+          //     cityId:1,
+          //     name :'Прасування',
+          //     list:[],
+          //     icon:'icon-iron'
+          // }
       ]
 
       this.ordered = [
@@ -234,6 +260,11 @@ export class CategoriesProvider {
 
   getServices(){
     return this.services.slice();
+  }
+  getServicesByCityId(id){
+      return this.services.filter(item => {
+          return item.cityId === id;
+      });
   }
 
   getOrderedList(){

@@ -7,12 +7,30 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>department-lists</ion-title>
+    <ion-title>department-maps</ion-title>
+    <burger-menu></burger-menu>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 
+    <chysto-segment [form]="myForm" [cities]="cities"></chysto-segment>
+  <!--<form [formGroup]="myForm">-->
+    <!--<ion-segment formControlName="mapStyle" color="danger" >-->
+      <!--<ion-segment-button *ngFor="let city of cities" [value]="city.id">-->
+        <!--{{city.city}}-->
+      <!--</ion-segment-button>-->
+    <!--</ion-segment>-->
+  <!--</form>-->
+
+
+
+
+
+
+  <ion-grid no-padding   *ngFor="let dep of departments.list">
+    <department-list-item [cityId]="departments.cityId" [dep]="dep">
+    </department-list-item>
+  </ion-grid>
 </ion-content>

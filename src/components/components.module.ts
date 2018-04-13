@@ -15,6 +15,7 @@ import { OrderedItemComponent } from './ordered-item/ordered-item';
 import { DepartmentComponent } from './department/department';
 import { CommmonButtonComponent } from './commmon-button/commmon-button';
 import { DepartmentListItemComponent } from './department-list-item/department-list-item';
+import { ChystoSegmentComponent } from './chysto-segment/chysto-segment';
 @NgModule({
 	declarations: [ActionsComponent,
     ActionDetailComponent,
@@ -31,7 +32,8 @@ import { DepartmentListItemComponent } from './department-list-item/department-l
     OrderedItemComponent,
     DepartmentComponent,
     CommmonButtonComponent,
-    DepartmentListItemComponent],
+    DepartmentListItemComponent,
+    ChystoSegmentComponent],
 	imports: [],
 	exports: [ActionsComponent,
     ActionDetailComponent,
@@ -48,6 +50,7 @@ import { DepartmentListItemComponent } from './department-list-item/department-l
     OrderedItemComponent,
     DepartmentComponent,
     CommmonButtonComponent,
-    DepartmentListItemComponent]
+    DepartmentListItemComponent,
+    ChystoSegmentComponent]
 })
 export class ComponentsModule {}

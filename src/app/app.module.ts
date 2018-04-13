@@ -39,6 +39,7 @@ import {DepartmentListsPage} from "../pages/department-lists/department-lists";
 import {DepartmentListItemComponent} from "../components/department-list-item/department-list-item";
 import {DepartmentListMapPage} from "../pages/department-list-map/department-list-map";
 import {Geolocation} from "@ionic-native/geolocation";
+import {ChystoSegmentComponent} from "../components/chysto-segment/chysto-segment";
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import {Geolocation} from "@ionic-native/geolocation";
       DepartmentListsPage,
       DepartmentMapsPage,
       DepartmentListItemComponent,
-      DepartmentListMapPage
+      DepartmentListMapPage,
+      ChystoSegmentComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +115,8 @@ import {Geolocation} from "@ionic-native/geolocation";
       DepartmentListsPage,
       DepartmentMapsPage,
       DepartmentListItemComponent,
-      DepartmentListMapPage
+      DepartmentListMapPage,
+      ChystoSegmentComponent
 
   ],
   providers: [

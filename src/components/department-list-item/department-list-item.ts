@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {Input} from "@angular/core";
 import {HostBinding} from "@angular/core";
+import {NavController} from "ionic-angular";
+import {DepartmentListMapPage} from "../../pages/department-list-map/department-list-map";
 
 /**
  * Generated class for the DepartmentListItemComponent component.
@@ -17,12 +19,18 @@ export class DepartmentListItemComponent {
 
   text: string;
   @Input() hideButton = true;
-
+  @Input() cityId;
   @Input() dep;
 // @HostBinding();
-  constructor() {
+  constructor(private nav: NavController) {
     console.log('Hello DepartmentListItemComponent Component');
     this.text = 'Hello World';
+  }
+
+
+  goToMap(){
+
+     this.nav.push(DepartmentListMapPage,{city:this.cityId, dep:this.dep.depId});
   }
 
 }

@@ -1,0 +1,7 @@
+<form [formGroup]="form">
+  <ion-segment formControlName="mapStyle" color="danger" >
+    <ion-segment-button *ngFor="let city of cities" [value]="city.id">
+      {{city.city}}
+    </ion-segment-button>
+  </ion-segment>
+</form>

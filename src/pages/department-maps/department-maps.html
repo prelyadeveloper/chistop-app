@@ -8,24 +8,17 @@
 
   <ion-navbar>
     <ion-title>department-maps</ion-title>
+    <burger-menu></burger-menu>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content >
+  <chysto-segment [form]="myForm" [cities]="cities"></chysto-segment>
+<section>
+  <div #map id="map"></div>
+</section>
 
-  <form [formGroup]="myForm">
-    <ion-segment formControlName="mapStyle" color="danger">
-      <ion-segment-button *ngFor="let city of cities" [value]="city.id">
-        {{city.city}}
-      </ion-segment-button>
-    </ion-segment>
-  </form>
-
-
-    <ion-grid (click)="goTo(departments.cityId, dep.depId)"  *ngFor="let dep of departments.list">
-      <department-list-item  [dep]="dep">
-      </department-list-item>
-    </ion-grid>
+  <div id="content">
+  </div>
 </ion-content>

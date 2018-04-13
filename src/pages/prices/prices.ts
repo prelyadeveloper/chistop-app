@@ -5,6 +5,8 @@ import {CategoriesProvider} from "../../providers/categories/categories";
 import {ViewChild} from "@angular/core";
 import {trigger, transition, style, animate, useAnimation} from "@angular/animations";
 import {HostBinding} from "@angular/core";
+import {FormGroup} from "@angular/forms";
+import {FormBuilder} from "@angular/forms";
 
 
 /**
@@ -29,22 +31,43 @@ export class PricesPage {
     overallPrice = 0;
     view: string;
     bindingVar = '';
+    myForm : FormGroup;
     shift = '';
+    cities;
+    cityId = 1;
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private events: Events, private catPr: CategoriesProvider) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private events: Events,
+              private catPr: CategoriesProvider,
+              private fb: FormBuilder) {
     this.view = 'cat';
-      this.services = this.catPr.getServices();
 
+      this.services = this.catPr.getServicesByCityId(this.cityId);
       this.sortedServices = this.services;
+
+      this.cities = this.catPr.getDepartmentsCities();
+
+
+
+      this.myForm = this.fb.group({
+          mapStyle:[this.cities[0].id]
+      });
+
+      this.myForm.valueChanges.subscribe(value =>{
+          this.services = this.catPr.getServicesByCityId(value.mapStyle);
+          this.servicesSort(this.input.nativeElement.value);
+          this.cityId = value.mapStyle;
+      })
   }
 
-toggle(){
+    toggle(){
 
-      this.shift =  this.shift ==='leave' ? 'enter' : 'leave';
-      alert(0);
-}
+          this.shift =  this.shift ==='leave' ? 'enter' : 'leave';
+
+    }
 
     search(){
       if (this.view === 'cat') {
@@ -56,14 +79,14 @@ toggle(){
 
     showSubCat(id : number){
         this.input.nativeElement.value = '';
-        this.subCat = this.findSubCat(id);
+        this.subCat = this.findSubCat(id,this.cityId);
         this.sortedServiceList = this.subCat.list;
         this.view = 'subcat';
     }
 
-    findSubCat(id : number) {
+    findSubCat(id : number, cityId: number) {
     return this.services.find(item => {
-      return item.id === id;
+      return item.id === id && item.cityId === cityId;
     })
     }
 

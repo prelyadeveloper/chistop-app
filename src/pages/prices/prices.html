@@ -15,7 +15,7 @@
 
 
 <ion-content  style="position: relative">
-
+  <chysto-segment [form]="myForm" [cities]="cities"></chysto-segment>
   <div class="input-div ">
     <ion-icon name="icon-magnifier"></ion-icon>
     <input #inputValue (keyup)="search()" placeholder="Пошук" type="text">
@@ -44,9 +44,8 @@
 
     <ion-row *ngIf="view === 'subcat'" class="price-block">
       <ion-col col-12>
-        <p class="or-category" ><ion-icon color="primary" [name]="subCat.icon"></ion-icon><span >{{subCat.name}}</span></p>
+        <p class="or-category" ><ion-icon (click)="showCat()" color="primary" [name]="subCat.icon"></ion-icon><span >{{subCat.name}}</span></p>
       </ion-col>
-      <!--<ion-col  col-12><span (click)="showCat()">go back</span></ion-col>-->
       <ion-col no-padding *ngFor="let item of sortedServiceList" style="margin-bottom: 17px;">
           <ion-col col-6 col-sm-6 no-padding style="justify-content: end">
             <span>{{item.name}}</span>
